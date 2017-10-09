@@ -1,6 +1,6 @@
 # Nabto Webhook Demo
 
-To run this demo, you need a Nabto device ID and key. This device ID must be on a domain where webhooks are configured.
+To run this demo, you need a Nabto device ID and key. This device ID must be on a domain where you have access to configure webhooks.
 
 ## Usage
 Clone this repository with the recursive argument to also get the unabto submodule:
@@ -37,7 +37,7 @@ Go to www.ifttt.com and create an account, or login with google or facebook and 
 
 ### Running Nabto
 
-Go to https://api.cloud.nabto.com/dashboard/ and configure your domain to use your webhook URL. If you are using the ifttt example above, this is the URL from step 12. Otherwise, configure your own webhook endpoint.
+Go to https://api.cloud.nabto.com/dashboard/ and configure your domain to use your webhook URL. If you are using the ifttt example above, this is the URL from step 12. Otherwise, configure your own webhook endpoint. If you are using your own endpoint, a username and password for HTTP basic access authentication can be configured as well.
 
 Then run the uNabto device build earlier by changing <DEVICE ID> and <DEVICE KEY> to your device ID and pre shared key and running the following command:
 ```
