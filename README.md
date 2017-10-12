@@ -43,4 +43,12 @@ Then run the uNabto device build earlier by changing <DEVICE ID> and <DEVICE KEY
 ```
 ./webhook_demo_device -d <DEVICE ID> -k <DEVICE KEY>
 ```
+Once the Nabto webhook demo has started, press the enter key to trigger a notification.
 
+## Implementation
+
+This demo is implemented in the two files `src/unabto_main.c` and `src/unabto_application.c`
+
+`unabto_main.c` initializes the uNabto software, after witch it runs an infinite loop which checks for keyboard input to trigger notifications, and lets the uNabto software run every 10ms.
+
+`unabto_application.c` implements the handling of notifications. Here is a function to construct and send a notification, as well as a callback function which will be called when the notification is successfully delivered to the Nabto basestation.
