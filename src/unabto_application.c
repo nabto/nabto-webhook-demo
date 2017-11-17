@@ -5,7 +5,7 @@
 #include "unabto/unabto_app.h"
 #include "unabto/unabto_util.h"
 #include "unabto/unabto_protocol_defines.h"
-#include <modules/stateful_push_service/stateful_push_service.h>
+#include <modules/push_service/push_service.h>
 #include <stdio.h>
 
 /* Data to send to the webhook. The staticData of the push_message structure must be JSON formatted.

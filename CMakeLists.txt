@@ -6,7 +6,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/unabto/build/cmake/unabto_project.cmake)
 set(src
   ${unabto_src}
   ${unabto_module_cli_gopt_src}
-  ${unabto_module_stateful_push_service_src}
+  ${unabto_module_push_service_src}
   ${unabto_module_read_hex}
   ${UNABTO_MODULES_SRC_DIR}/util/read_hex.c
   ${CMAKE_CURRENT_SOURCE_DIR}/src/unabto_main.c
