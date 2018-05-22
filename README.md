@@ -17,33 +17,24 @@ cmake ..
 make -j
 ```
 
-This example uses www.ifttt.com as endpoint for the webhook as this is easily available to anyone. However, if you have another webhook endpoint available, this can be used instead, and the next section can be skipped.
+This example uses https://webhook.site as endpoint for the webhook as this is easily available to anyone. However, if you have another webhook endpoint available, this can be used instead, and the next section can be skipped.
 
-### Configuring ifttt
-Go to www.ifttt.com and create an account, or login with google or facebook and follow the following steps:
-
- 1. Go to "My Applets"
- 2. Click "New Applet"
- 3. Click "this"
- 4. search for webhooks and click the webhooks service
- 5. Click the box
- 6. Choose an event name using characters usable in an URL (eg. temperature_notification)
- 7. Click "Create trigger"
- 8. Click "that"
- 9. Choose a service to send the notification to (eg. email)
- 10. Configure the email you want to send when a notification occurs
- 11. Go to the webhooks service and click "Documentation"
- 12. Note down the URL for triggering an event, change "{event}" to the event name chosen in step 6
+### Configuring webhook.site
+Go to https://webhook.site. The webhook site should immediately redirect you to your own unique URL you can use for testing the Nabto push webhooks. Note down your unique URL, this is this URL which should be registered in the Nabto console, and is also the website where received push notifications can be seen.
 
 ### Running Nabto
 
-Go to https://console.cloud.nabto.com/ and configure your domain to use your webhook URL. If you are using the ifttt example above, this is the URL from step 12. Otherwise, configure your own webhook endpoint. If you are using your own endpoint, a username and password for HTTP basic access authentication can be configured as well.
+Go to https://console.cloud.nabto.com/ and configure your domain to use your webhook URL. If you are using your own endpoint, a username and password for HTTP basic access authentication can be configured as well. The webhook.site example does not use any authentication.
 
-Then run the uNabto device build earlier by changing <DEVICE ID> and <DEVICE KEY> to your device ID and pre shared key and running the following command:
+Then run the uNabto device build earlier by changing <DEVICE ID> and <DEVICE KEY> to your device ID and pre shared key found in the Nabto console and run the following command:
 ```
 ./webhook_demo_device -d <DEVICE ID> -k <DEVICE KEY>
 ```
-Once the Nabto webhook demo has started, press the enter key to trigger a notification.
+Once the Nabto webhook demo has started, a log line should appear stating that the device has attached to the Nabto basestation:
+```
+08:53:04:539 unabto_attach.c(591) State change from WAIT_GSP to ATTACHED
+```
+Now, press the enter key to trigger a notification. After a few seconds, the notification should arrive at your configured webhook. If you are using the webhook.site example, the notification should automatically appear on the website. 
 
 ## Implementation
 
