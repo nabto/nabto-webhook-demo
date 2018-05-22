@@ -8,11 +8,10 @@
 #include <modules/push_service/push_service.h>
 #include <stdio.h>
 
-/* Data to send to the webhook. The staticData of the push_message structure must be JSON formatted.
- * This example uses IFTTT (www.ifttt.com), where the webhook service only supports JSON values named
- * "value1", "value2", and "value3". However, Nabto supports any valid JSON document.
+/*
+ * Data to send to the webhook. The staticData of the push_message structure must be JSON formatted.
  */
-const char staticData[] = {"{\"value1\": \"Temperature Warning:\",\"value2\": \"943\",\"value3\": \"degrees\"}"};
+const char staticData[] = {"{\"warning\": \"Temperature Warning\",\"temperature\": \"943\",\"unit\": \"celsius\"}"};
 
 int context = 594;
     
